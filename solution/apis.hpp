@@ -98,18 +98,15 @@ constexpr auto hash_string_fnv1a(const T* buffer)
 
 HASHED_FUNCTION(GetProcAddress) // Required.
 HASHED_FUNCTION(LoadLibraryW)
-HASHED_FUNCTION(MessageBoxW)
 
 
 DEFINE_DLL(NTDLL)
 DEFINE_DLL(KERNEL32)
-DEFINE_DLL(USER32)
 
 // UPDATE WITH DLLS REQUIRED AT RUNTIME
 static constexpr const wchar_t* required_dlls[] = {
 	L"NTDLL.DLL",
 	L"KERNEL32.DLL",
-	L"USER32.DLL",
 };
 
 ////////////////////////////////////////////////////////////////
