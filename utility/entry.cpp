@@ -72,12 +72,12 @@ int main()
         L".dll",
         [](const wchar_t* file_path)
         {
-            HANDLE                dll_handle        = INVALID_HANDLE_VALUE;
-            HANDLE                dll_mapping       = INVALID_HANDLE_VALUE;
-            HANDLE                mapped_dll_base   = INVALID_HANDLE_VALUE;
-            PIMAGE_DOS_HEADER     dos_header        = NULL;
-            PIMAGE_NT_HEADERS     nt_headers        = NULL;
-            PIMAGE_SECTION_HEADER section_header    = NULL;
+            HANDLE                dll_handle      = INVALID_HANDLE_VALUE;
+            HANDLE                dll_mapping     = INVALID_HANDLE_VALUE;
+            HANDLE                mapped_dll_base = INVALID_HANDLE_VALUE;
+            PIMAGE_DOS_HEADER     dos_header      = NULL;
+            PIMAGE_NT_HEADERS     nt_headers      = NULL;
+            PIMAGE_SECTION_HEADER section_header  = NULL;
 
             dll_handle = CreateFileW(file_path, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
             if (dll_handle == INVALID_HANDLE_VALUE)
