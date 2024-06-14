@@ -1,0 +1,31 @@
+name: Build
+
+run-name: Compile
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-target:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build solution
+        run: msbuild /p:Configuration=Release /p:Platform=x64 .\PMD.sln
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: PMD Artifacts
+          path: |
+            x64/Release/*.dll
+            x64/Release/*.exe
